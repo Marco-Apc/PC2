@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <locale.h>
 //  1. Escreva um programa que:
 //  (a) Crie/abra um arquivo texto de nome "arq.txt".
@@ -27,12 +28,23 @@ void Questao01()
 void Questao02()
 {
     FILE *arq;
-    char caracter;
+    char caracter, nomeArquivo[20];
     int vogais = 0, consoantes = 0;
-    arq = fopen("arq.txt", "r");
+    printf("Digite o nome do arquivo de texto plano: \n");
+    scanf("%s", &nomeArquivo);
+    strcat(nomeArquivo, ".txt");
+    arq = fopen(nomeArquivo, "r");
+    if (!arq)
+    {
+        printf("Arquivo nao encontrado.\n");
+        exit(1);
+    }
     while ((caracter = fgetc(arq)) != EOF)
     {
-        
+        if (caracter == 'a' || caracter == 'e' || caracter == 'i' || caracter == 'o' || caracter == 'u')
+            vogais++;
+        else if (caracter == 'b' || caracter == 'c' || caracter == 'd' || caracter == 'f' || caracter == 'g' || caracter == 'h' || caracter == 'j' || caracter == 'k' || caracter == 'l' || caracter == 'm' || caracter == 'n' || caracter == 'p' || caracter == 'q' || caracter == 'r' || caracter == 's' || caracter == 't' || caracter == 'v' || caracter == 'w' || caracter == 'x' || caracter == 'y' || caracter == 'z')
+            consoantes++;
     }
     fclose(arq);
     printf("\nVogais: %d\nConsoantes: %d\n", vogais, consoantes);
@@ -40,6 +52,10 @@ void Questao02()
 //  3. Faça um programa que receba do usuário um arquivo texto. Crie
 //  outro arquivo texto contendo o texto do arquivo de entrada com as
 //  vogais substituídas por ’*’.
+void Questao03()
+{
+    FILE *arq;
+}
 //  4. Faça um programa para gerenciar uma agenda de contatos. Para cada
 //  contato armazene o nome, o telefone e o aniversário (dia e mês).
 //  programa deve permitir
