@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     char tipo_arquivo[3];
     int linhas, colunas, escala;
 
-    arq = fopen("mona_lisa.pgm", "rb");
+    arq = fopen("C:\\Users\\marco\\Documents\\Faculdade\\PC2\\Tratamento de Imagem\\imagens\\mona_lisa.pgm", "rb");
 
     ignoraComentario(arq);
     fscanf(arq, "%s", tipo_arquivo);
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     fclose(arq);
 
     FILE *arq_saida;
-    arq_saida = fopen("mona_lisa_saida.pgm", "wb");
+    arq_saida = fopen("C:\\Users\\marco\\Documents\\Faculdade\\PC2\\Tratamento de Imagem\\imagens\\mona_lisa_saida.pgm", "wb");
 
     fprintf(arq_saida, "%s\n", tipo_arquivo);
     fprintf(arq_saida, "%d %d\n", colunas, linhas);
