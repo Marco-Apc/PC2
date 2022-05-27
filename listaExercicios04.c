@@ -55,6 +55,8 @@ void trocaValores(char *str01, char *str02){
 }
 void questao10()
 {
+    char string;
+    char *pstring;
     char *str01 = malloc(sizeof(char));
     char *str02 = malloc(sizeof(char));
     printf("Digite a primeira frase: ");
